@@ -2,20 +2,25 @@
 #define DEGREE 4
 int POLY[DEGREE + 1] = {1, 0, 1, 1}; // CRC Polynomial: x^4 + x + 1
 
-int xor(int a, int b) {
+int xor(int a, int b)
+{
     return a ^ b;
 }
 
-void calculateCRC(int data[], int len) {
-    for (int i = 0; i <= len - DEGREE - 1; i++) {
-        if (data[i] == 1) {
+void calculateCRC(int data[], int len)
+{
+    for (int i = 0; i <= len - DEGREE - 1; i++)
+    {
+        if (data[i] == 1)
+        {
             for (int j = 0; j <= DEGREE; j++)
                 data[i + j] = xor(data[i + j], POLY[j]);
         }
     }
 }
 
-int main() {
+int main()
+{
     int data[50], len = 0, totalLen, i;
     char ch;
 
@@ -56,8 +61,10 @@ int main() {
     calculateCRC(recv, len);
 
     int error = 0;
-    for (i = len - DEGREE; i < len; i++) {
-        if (recv[i] != 0) {
+    for (i = len - DEGREE; i < len; i++)
+    {
+        if (recv[i] != 0)
+        {
             error = 1;
             break;
         }
