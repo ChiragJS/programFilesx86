@@ -12,7 +12,6 @@ int main()
     do
     {
         scanf("%c", &ch);
-        printf("char is ", ch);
         if (ch == '\n')
             break;
         if (ch == DLE)

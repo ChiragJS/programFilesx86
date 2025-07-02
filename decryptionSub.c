@@ -2,8 +2,7 @@
 #include <string.h>
 #include <ctype.h>
 
-    int
-    main()
+int main()
 {
     char seq[36] = "qwertyuiopasdfghjklzxcvbnm1234567890";
     char data[100];
